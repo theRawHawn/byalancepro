@@ -22,6 +22,7 @@ import Payroll from './components/services/Payroll';
 import TDS from './components/services/TDS';
 import { LanguageProvider, useLanguage, translations } from './context/LanguageContext';
 import SEO from './components/SEO';
+import ScarcityPopup from './components/ScarcityPopup';
 
 // A generic service page component for demonstration
 const ServicePage = ({ title, titleKey }: { title: string, titleKey?: string }) => {
@@ -74,6 +75,7 @@ export default function App() {
       <div className="relative overflow-x-hidden">
         <Navbar />
         <FloatingWhatsApp />
+        <ScarcityPopup />
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<LandingPage />} />
