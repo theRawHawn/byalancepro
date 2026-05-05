@@ -13,6 +13,7 @@ export default function Contact() {
     businessType: '',
     message: '',
   });
+  const [formStatus, setFormStatus] = useState('');
 
   const contactInfo = [
     { icon: Phone, title: t.contact.phone, text: '+91 74062 96116, +91 96111 93492' },
@@ -27,6 +28,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormStatus('sending');
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -36,7 +38,7 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        alert('Form submitted successfully!');
+        setFormStatus('success');
         setFormData({
           name: '',
           mobile: '',
@@ -45,11 +47,11 @@ export default function Contact() {
           message: '',
         });
       } else {
-        alert('Failed to submit form.');
+        setFormStatus('error');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again later.');
+      setFormStatus('error');
     }
   };
 
@@ -145,8 +147,14 @@ export default function Contact() {
               </div>
 
               <button className="w-full bg-indigo-600 text-white py-5 rounded-2xl font-bold uppercase text-[11px] tracking-[0.3em] hover:bg-slate-900 transition-all shadow-xl shadow-indigo-100 flex items-center justify-center gap-3">
-                {t.contact.send}
+                {formStatus === 'sending' ? 'Sending...' : t.contact.send}
               </button>
+              {formStatus === 'success' && (
+                <p className="text-green-600 text-center">Form submitted successfully! We will get back to you soon.</p>
+              )}
+              {formStatus === 'error' && (
+                <p className="text-red-600 text-center">Failed to submit form. Please try again later.</p>
+              )}
             </form>
           </motion.div>
         </div>
