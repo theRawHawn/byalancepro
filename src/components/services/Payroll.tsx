@@ -1,3 +1,4 @@
+import SEO from '../SEO';
 import React from 'react';
 import { Users, Check, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
@@ -62,118 +63,126 @@ const Payroll = () => {
   const data = t.serviceDetail?.payroll || translations.en.serviceDetail.payroll;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <section className="bg-gradient-to-br from-indigo-50 to-white py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-indigo-600 rounded-xl text-white">
-                    <Users className="w-8 h-8" />
+    <>
+      <SEO
+        title="Payroll Processing Services | Byalance"
+        description="Streamline your payroll process with our reliable and accurate payroll services. We manage everything from salary processing to compliance."
+        // Add your comma-separated keywords for the Payroll page here
+        keywords="payroll processing, payroll services, salary processing, payroll compliance, payroll outsourcing"
+      />
+      <div className="min-h-screen bg-gray-50 pt-20">
+        <section className="bg-gradient-to-br from-indigo-50 to-white py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-indigo-600 rounded-xl text-white">
+                      <Users className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-indigo-600 uppercase tracking-wide">{t.nav.services}</p>
+                      <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{data.title}</h1>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-indigo-600 uppercase tracking-wide">{t.nav.services}</p>
-                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{data.title}</h1>
-                  </div>
-                </div>
-                <p className="text-xl text-gray-600 max-w-3xl mt-4 leading-relaxed">
-                  {data.desc}
-                </p>
-            </div>
-            <div className="hidden md:block">
-              <PayrollIllustration />
+                  <p className="text-xl text-gray-600 max-w-3xl mt-4 leading-relaxed">
+                    {data.desc}
+                  </p>
+              </div>
+              <div className="hidden md:block">
+                <PayrollIllustration />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div className="lg:col-span-2 space-y-8">
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.common.whatsIncluded}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                {data.features.map((f: string) => (
-                  <div key={f} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{f}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="lg:col-span-2 space-y-8">
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.common.whatsIncluded}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                  {data.features.map((f: string) => (
+                    <div key={f} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whyTitle}</h2>
-              <div className="space-y-4">
-                {data.whyDesc.split('\n\n').map((para: string, i: number) => (
-                  <p key={i} className="text-gray-600 leading-relaxed text-lg">
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whyTitle}</h2>
+                <div className="space-y-4">
+                  {data.whyDesc.split('\n\n').map((para: string, i: number) => (
+                    <p key={i} className="text-gray-600 leading-relaxed text-lg">
+                      {para}
+                    </p>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whoTitle}</h2>
-              <ul className="space-y-3">
-                {data.whoItems.map((w: string) => (
-                  <li key={w} className="flex items-center gap-3 text-gray-700">
-                    <ArrowRight className="w-4 h-4 text-indigo-600 flex-shrink-0" />{w}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
+            <Card>
+              <CardContent className="p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whoTitle}</h2>
+                <ul className="space-y-3">
+                  {data.whoItems.map((w: string) => (
+                    <li key={w} className="flex items-center gap-3 text-gray-700">
+                      <ArrowRight className="w-4 h-4 text-indigo-600 flex-shrink-0" />{w}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
 
-        <div className="space-y-6">
-          <Card className="border-2 border-indigo-600">
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{t.common.getStartedToday}</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Share your employee headcount and CTC details. We'll set up your payroll structure
-                and take over from month one.
-              </p>
-              <a
-                href="https://wa.me/917406296116"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-green-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors mb-3"
-              >
-                {t.common.chatWhatsapp}
-              </a>
-              <Link to="/#contact" className="block w-full text-center border border-indigo-600 text-indigo-600 px-4 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors">
-                {t.common.sendEnquiry}
-              </Link>
-            </CardContent>
-          </Card>
+          <div className="space-y-6">
+            <Card className="border-2 border-indigo-600">
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{t.common.getStartedToday}</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Share your employee headcount and CTC details. We'll set up your payroll structure
+                  and take over from month one.
+                </p>
+                <a
+                  href="https://wa.me/917406296116"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center bg-green-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors mb-3"
+                >
+                  {t.common.chatWhatsapp}
+                </a>
+                <Link to="/#contact" className="block w-full text-center border border-indigo-600 text-indigo-600 px-4 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors">
+                  {t.common.sendEnquiry}
+                </Link>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">{t.common.relatedServices}</h3>
-              <ul className="space-y-2">
-                {[
-                  { label: t.services?.items[0]?.title || "Accounting & Bookkeeping", href: "/services/accounting-bookkeeping" },
-                  { label: t.services?.items[3]?.title || "TDS Services",             href: "/services/tds-services"           },
-                  { label: t.services?.items[2]?.title || "GST Services",             href: "/services/gst-services"           },
-                  { label: t.services?.items[1]?.title || "ITR Services",             href: "/services/itr-services"           },
-                ].map(({ label, href }) => (
-                  <li key={href}>
-                    <Link to={href} className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center gap-1">
-                      <ArrowRight className="w-3 h-3" />{label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{t.common.relatedServices}</h3>
+                <ul className="space-y-2">
+                  {[
+                    { label: t.services?.items[0]?.title || "Accounting & Bookkeeping", href: "/services/accounting-bookkeeping" },
+                    { label: t.services?.items[3]?.title || "TDS Services",             href: "/services/tds-services"           },
+                    { label: t.services?.items[2]?.title || "GST Services",             href: "/services/gst-services"           },
+                    { label: t.services?.items[1]?.title || "ITR Services",             href: "/services/itr-services"           },
+                  ].map(({ label, href }) => (
+                    <li key={href}>
+                      <Link to={href} className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center gap-1">
+                        <ArrowRight className="w-3 h-3" />{label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
