@@ -17,7 +17,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % cyclingTexts.length);
-    }, 2200);
+    }, 1600);
     return () => clearInterval(interval);
   }, []);
 
