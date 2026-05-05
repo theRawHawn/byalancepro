@@ -51,11 +51,7 @@ export default function Navbar() {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <div className="text-3xl font-display font-bold tracking-tight relative">
-            <span className="text-[#0047AB]">B</span>
-            <span className="text-[#0047AB]">yalance</span>
-            <div className="absolute -bottom-1 right-0 h-1 w-16 bg-green-500 rounded-full"></div>
-          </div>
+          <img src="/brandlogo (1).svg" alt="Byalance" className="h-10" />
         </Link>
 
         {/* Desktop Links */}

@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/api/contact", "destination": "/api/contact" }
+  ],
+  "functions": {
+    "api/contact.ts": {
+      "runtime": "@vercel/node"
+    },
+    "functions/contact.ts": {
+      "runtime": "@cloudflare/pages-functions"
+    }
+  }
+}

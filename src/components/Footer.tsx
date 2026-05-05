@@ -30,12 +30,7 @@ export default function Footer() {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-6 mb-6">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
-                <span className="font-bold text-lg">B</span>
-              </div>
-              <span className="text-lg font-display font-extrabold tracking-tight">BYALANCE</span>
-            </div>
+            <img src="/brandlogowhite (1).svg" alt="Byalance" className="h-12 mb-4" />
             <p className="text-slate-400 text-xs leading-relaxed mb-4 max-w-xs font-medium">
               {t.footer.about}
             </p>

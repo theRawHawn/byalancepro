@@ -53,7 +53,7 @@ export default function About() {
             className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl shadow-slate-200"
           >
             <img 
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop" 
+              src="/file_000.webp" 
               alt="Byalance Professional Compliance"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
