@@ -132,7 +132,7 @@ const ITR = () => {
                 href="https://wa.me/917406296116"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-green-500 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors mb-3"
+                className="block w-full text-center bg-green-600 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors mb-3"
               >
                 {t.common.chatWhatsapp}
               </a>

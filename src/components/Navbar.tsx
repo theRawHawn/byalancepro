@@ -113,7 +113,7 @@ export default function Navbar() {
             href="https://wa.me/917406296116"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#25D366] text-white px-6 py-2.5 rounded-xl hover:bg-[#20bd5a] transition-all shadow-md shadow-green-100 font-bold ml-2"
+            className="flex items-center gap-2 bg-green-600 text-white px-6 py-2.5 rounded-xl hover:bg-green-600 transition-all shadow-md shadow-green-100 font-bold ml-2"
           >
             <WhatsAppIcon className="w-5 h-5" />
             <span>WhatsApp</span>
@@ -177,7 +177,7 @@ export default function Navbar() {
                 href="https://wa.me/917406296116"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-4 rounded-2xl mt-4 font-bold shadow-lg shadow-green-100"
+                className="flex items-center justify-center gap-2 bg-green-500 text-white py-4 rounded-2xl mt-4 font-bold shadow-lg shadow-green-100"
               >
                 <WhatsAppIcon className="w-5 h-5" />
                 <span>WhatsApp Now</span>

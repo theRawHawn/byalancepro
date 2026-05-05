@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { WhatsAppIcon } from './icons/WhatsAppIcon';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -22,11 +22,11 @@ export default function Contact() {
     { icon: Clock, title: t.common.businessHours, text: 'Mon – Sat: 9:00 AM – 5:30 PM' },
   ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus('sending');
     try {
@@ -94,7 +94,7 @@ export default function Contact() {
                 href="https://wa.me/917406296116"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-3.5 rounded-xl font-bold uppercase text-[10px] tracking-widest hover:bg-indigo-500 transition-all shadow-lg shadow-indigo-500/20 relative z-10"
+                className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-3.5 rounded-xl font-bold uppercase text-[10px] tracking-widest hover:bg-green-600 transition-all shadow-lg shadow-green-500/20 relative z-10"
               >
                 <WhatsAppIcon className="w-4 h-4" />
                 <span>{t.common.messageNow}</span>

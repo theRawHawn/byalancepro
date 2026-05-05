@@ -224,7 +224,7 @@ export const translations = {
     contact: {
       badge: 'Expert Consultation',
       title: 'Ready to fortify your financial compliance?',
-      description: 'Speak with our senior accountants today. We provide clear paths to regulatory clarity and business growth.',
+      description: 'Speak with our Professional accountants today. We provide clear paths to regulatory clarity and business growth.',
       phone: 'Call Us',
       email: 'Email Us',
       location: 'Visit Us',
@@ -247,7 +247,7 @@ export const translations = {
       learnMore: 'Learn More',
       businessHours: 'Business Hours',
       instantResponse: 'Instant Response',
-      whatsappDesk: 'Our WhatsApp desk is manned by certified accountants for rapid policy guidance.',
+      whatsappDesk: 'Our WhatsApp desk is manned by experienced accountants for rapid policy guidance.',
       messageNow: 'Message Now',
       enterName: 'Enter your name',
       mobileNumber: 'Mobile Number',

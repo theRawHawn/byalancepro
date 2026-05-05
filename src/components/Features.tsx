@@ -25,12 +25,12 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-professional p-8 group overflow-hidden relative flex flex-col items-center text-center"
+                className="p-8 group overflow-hidden relative flex flex-col items-center text-center bg-indigo-50 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.05] transition-opacity">
                   <Icon size={80} />
                 </div>
-                <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 shadow-sm border border-indigo-100/50 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 text-indigo-600 shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
                   <Icon size={24} />
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3 text-slate-900">{feature.title}</h3>
