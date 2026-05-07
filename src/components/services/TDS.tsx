@@ -2,76 +2,104 @@ import SEO from '../SEO';
 import React from 'react';
 import { Receipt, Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useLanguage, translations } from "../../context/LanguageContext";
-import { motion } from 'motion/react';
+
+const features = [
+  "TAN Registration & Application",
+  "Filing of Form 24Q (Salary TDS)",
+  "Filing of Form 26Q (Non-Salary TDS)",
+  "Filing of Form 27Q (Non-Resident Payments)",
+  "Advance Tax Calculation & Challan Management",
+  "TDS on Rent (Form 26QC) & Purchase of Property",
+  "Form 16 & Form 16A Generation",
+  "TDS Default & Demand Resolution",
+  "Lower Deduction Certificate Support (Form 13)",
+];
+
+const whoIsItFor = [
+  "Companies and LLPs deducting TDS on salaries",
+  "Businesses making contractor or professional payments",
+  "Landlords or tenants with high-value rent",
+  "Buyers of property above ₹50 lakh",
+  "Any entity making payments subject to TDS provisions",
+];
 
 function TdsIllustration() {
   return (
     <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="TDS Services Illustration">
-      <rect width="480" height="320" rx="16" fill="#FFF7ED" />
-      <rect x="80" y="60" width="320" height="200" rx="12" fill="#FFFFFF" stroke="#FED7AA" strokeWidth="2" />
-      <rect x="80" y="60" width="320" height="40" rx="12" fill="#EA580C" />
-      <circle cx="370" cy="80" r="8" fill="#FFFFFF" fillOpacity="0.3" />
-      <rect x="100" y="120" width="100" height="10" rx="5" fill="#FDE68A" />
-      <rect x="280" y="120" width="80" height="10" rx="5" fill="#E2E8F0" />
-      <rect x="100" y="145" width="280" height="1" fill="#F1F5F9" />
-      <rect x="100" y="165" width="120" height="8" rx="4" fill="#94A3B8" />
-      <rect x="300" y="165" width="60" height="8" rx="4" fill="#F1F5F9" />
-      <rect x="100" y="185" width="280" height="1" fill="#F1F5F9" />
-      <rect x="100" y="205" width="100" height="8" rx="4" fill="#94A3B8" />
-      <rect x="320" y="200" width="40" height="20" rx="4" fill="#EA580C" />
-      <path d="M100 230 L 380 230" stroke="#F1F5F9" strokeWidth="1" />
-      <circle cx="60" cy="100" r="30" fill="#EA580C" />
-      <path d="M50 100 L 70 100 M 60 90 L 60 110" stroke="white" strokeWidth="3" fill="none" />
+      <rect width="480" height="320" rx="16" fill="#F3F4F6" />
+      <rect x="80" y="120" width="320" height="80" rx="10" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <circle cx="130" cy="160" r="25" fill="#3B82F6" />
+      <text x="130" y="165" textAnchor="middle" fontSize="20" fill="#FFFFFF" fontWeight="bold">₹</text>
+      <text x="130" y="195" textAnchor="middle" fontSize="10">PAYMENT</text>
+      <path d="M170 160 h 140" stroke="#9CA3AF" strokeWidth="4" strokeDasharray="8 4" />
+      <g transform="translate(230, 150) scale(0.6)">
+        <circle cx="15" cy="10" r="8" stroke="#EF4444" strokeWidth="3" fill="none"/>
+        <circle cx="15" cy="30" r="8" stroke="#EF4444" strokeWidth="3" fill="none"/>
+        <line x1="15" y1="10" x2="45" y2="40" stroke="#EF4444" strokeWidth="3"/>
+        <line x1="15" y1="30" x2="45" y2="0" stroke="#EF4444" strokeWidth="3"/>
+      </g>
+      <text x="245" y="195" textAnchor="middle" fontSize="10" fill="#EF4444">TDS</text>
+      <circle cx="350" cy="160" r="20" fill="#16A34A" />
+      <text x="350" y="165" textAnchor="middle" fontSize="16" fill="#FFFFFF" fontWeight="bold">₹</text>
+      <text x="350" y="195" textAnchor="middle" fontSize="10">PAYOUT</text>
+      <g transform="translate(50, 40)">
+        <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">24Q</text>
+        <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Salary</text>
+      </g>
+      <g transform="translate(350, 40)">
+        <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">26Q</text>
+        <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Non-Salary</text>
+      </g>
+      <g transform="translate(50, 230)">
+        <rect width="80" height="50" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5" />
+        <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">Form 16</text>
+        <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Certificate</text>
+      </g>
+      <g transform="translate(350, 230)">
+        <path d="M10 0 L 70 0 L 60 50 L 20 50 Z" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5"/>
+        <text x="40" y="25" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#4B5563">27Q</text>
+        <text x="40" y="40" textAnchor="middle" fontSize="7" fill="#6B7280">Non-Resident</text>
+      </g>
     </svg>
   );
 }
 
 const TDS = () => {
-  const { t } = useLanguage();
-  const data = t.serviceDetail?.tds || translations.en.serviceDetail.tds;
-
   return (
     <>
       <SEO
-        title={`${data.title} | Byalance`}
-        description={data.desc}
-        keywords="tds return filing, tds services, tds compliance, tds deduction, form 24q, form 26q"
+        title="TDS Services | Byalance"
+        description="Complete TDS lifecycle management — from deduction to quarterly filings and certificate generation. Stay compliant and avoid penalties."
+        keywords="TDS services, TDS filing, Form 24Q, Form 26Q, Form 16, TAN registration, TDS compliance"
       />
       <div className="min-h-screen bg-gray-50 pt-20">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-orange-50 to-white py-16">
+        <section className="bg-gradient-to-br from-indigo-50 to-white py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-orange-600 rounded-xl text-white shadow-lg shadow-orange-100">
-                      <Receipt className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-orange-600 uppercase tracking-wide">{t.services.title}</p>
-                      <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{data.title}</h1>
-                    </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-indigo-600 rounded-xl text-white">
+                    <Receipt className="w-8 h-8" />
                   </div>
-                  <p className="text-xl text-gray-600 max-w-3xl mt-4 leading-relaxed">
-                    {data.desc}
-                  </p>
-                </motion.div>
+                  <div>
+                    <p className="text-sm font-medium text-indigo-600 uppercase tracking-wide">Our Services</p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">TDS Services</h1>
+                  </div>
+                </div>
+                <p className="text-xl text-gray-600 max-w-3xl mt-4">
+                  Tax Deducted at Source is one of the most compliance-heavy areas for Indian businesses.
+                  Missed deadlines, incorrect deductions, or wrong PAN details attract heavy penalties.
+                  Byalance manages your complete TDS lifecycle — from deduction to quarterly filings and
+                  certificate generation.
+                </p>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="hidden md:block"
-              >
+              <div className="hidden md:block">
                 <TdsIllustration />
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -81,107 +109,81 @@ const TDS = () => {
           {/* Main content */}
           <div className="lg:col-span-2 space-y-8">
 
-            {/* What's Included */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.common.whatsIncluded}</h2>
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">What's Included</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                {data.features.map((f: string) => (
+                {features.map((f) => (
                   <div key={f} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-50 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-orange-600" />
-                    </div>
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{f}</span>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            {/* Why It Matters */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whyTitle}</h2>
-              <div className="text-gray-600 whitespace-pre-line leading-relaxed">
-                {data.whyDesc}
-              </div>
-            </motion.div>
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">The Cost of Non-Compliance</h2>
+              <p className="text-gray-600 mb-4">
+                Under Section 271C, failure to deduct TDS can attract a penalty equal to the amount
+                of tax not deducted. Late filing of TDS returns attracts ₹200/day under Section 234E.
+                These penalties compound quickly — Byalance ensures you're always a step ahead of
+                every quarterly deadline.
+              </p>
+              <p className="text-gray-600">
+                We reconcile your 26AS with books every quarter so discrepancies are caught before the
+                Income Tax Department flags them.
+              </p>
+            </div>
 
-            {/* Who Is This For */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whoTitle}</h2>
-              <ul className="space-y-4">
-                {data.whoItems.map((w: string) => (
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Who Is This For?</h2>
+              <ul className="space-y-3">
+                {whoIsItFor.map((w) => (
                   <li key={w} className="flex items-center gap-3 text-gray-700">
-                    <div className="w-6 h-6 rounded-lg bg-orange-50 flex items-center justify-center shrink-0">
-                      <ArrowRight className="w-3 h-3 text-orange-600" />
-                    </div>
-                    {w}
+                    <ArrowRight className="w-4 h-4 text-indigo-600 flex-shrink-0" />{w}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
 
-            {/* CTA Card */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-white rounded-2xl border-2 border-orange-600 p-6 sticky top-24 shadow-xl shadow-orange-100/50"
-            >
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{t.common.getStartedToday}</h3>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                {data.ctaDesc || "Seamless Tax Deducted at Source management. We handle TDS computation, compliance, and filing."}
+            <div className="bg-white rounded-2xl border-2 border-indigo-600 p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Get Started Today</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Book a free consultation. We'll review your current TDS obligations and set up a
+                clean quarterly filing schedule.
               </p>
-              <div className="space-y-3">
-                <a
-                  href="https://wa.me/917406296116"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full bg-green-500 text-white px-4 py-4 rounded-xl font-bold hover:bg-green-600 transition-all shadow-lg shadow-green-100"
-                >
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 brightness-0 invert" />
-                  {t.common.chatWhatsapp}
-                </a>
-                <Link
-                  to="/#contact"
-                  className="block w-full text-center border border-slate-200 text-slate-900 px-4 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all"
-                >
-                  {t.common.sendEnquiry}
-                </Link>
-              </div>
-            </motion.div>
+              <a
+                href="https://wa.me/917406296116"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-green-500 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors mb-3"
+              >
+                Chat on WhatsApp
+              </a>
+              <Link
+                to="/#contact"
+                className="block w-full text-center border border-indigo-600 text-indigo-600 px-4 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+              >
+                Send an Enquiry
+              </Link>
+            </div>
 
-            {/* Related Services */}
-            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">{t.common.relatedServices}</h3>
-              <ul className="space-y-3">
+            <div className="bg-white rounded-2xl border border-slate-100 p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Related Services</h3>
+              <ul className="space-y-2">
                 {[
-                  { label: t.serviceDetail?.accounting?.title || "Accounting & Bookkeeping", to: "/services/accounting-bookkeeping" },
-                  { label: t.serviceDetail?.gst?.title || "GST Services",       to: "/services/gst-services"       },
-                  { label: t.serviceDetail?.payroll?.title || "Payroll Processing", to: "/services/payroll-processing" },
-                  { label: t.serviceDetail?.itr?.title || "ITR Services",       to: "/services/itr-services"       },
+                  { label: "Accounting & Bookkeeping", to: "/services/accounting-bookkeeping" },
+                  { label: "GST Services",             to: "/services/gst-services"           },
+                  { label: "ITR Services",             to: "/services/itr-services"           },
+                  { label: "Payroll Processing",       to: "/services/payroll-processing"     },
                 ].map(({ label, to }) => (
                   <li key={to}>
-                    <Link to={to} className="text-orange-600 hover:text-orange-700 text-sm font-medium flex items-center gap-2 group">
-                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                      {label}
+                    <Link to={to} className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center gap-1">
+                      <ArrowRight className="w-3 h-3" />{label}
                     </Link>
                   </li>
                 ))}
