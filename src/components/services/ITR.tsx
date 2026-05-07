@@ -3,28 +3,38 @@ import React from 'react';
 import { FileText, Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage, translations } from "../../context/LanguageContext";
-import { motion } from 'motion/react';
 
 function ItrIllustration() {
   return (
-    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="ITR Filing Illustration">
-      <rect width="480" height="320" rx="16" fill="#F0F9FF" />
-      <rect x="100" y="50" width="280" height="220" rx="4" fill="#FFFFFF" stroke="#BAE6FD" strokeWidth="2" />
-      <rect x="120" y="75" width="100" height="12" rx="6" fill="#0EA5E9" />
-      <rect x="300" y="75" width="60" height="12" rx="6" fill="#E0F2FE" />
-      <rect x="120" y="110" width="240" height="1" fill="#F1F5F9" />
-      <rect x="120" y="125" width="140" height="8" rx="4" fill="#94A3B8" />
-      <rect x="320" y="125" width="40" height="8" rx="4" fill="#94A3B8" />
-      <rect x="120" y="145" width="120" height="8" rx="4" fill="#94A3B8" />
-      <rect x="320" y="145" width="40" height="8" rx="4" fill="#94A3B8" />
-      <rect x="120" y="165" width="160" height="8" rx="4" fill="#94A3B8" />
-      <rect x="320" y="165" width="40" height="8" rx="4" fill="#94A3B8" />
-      <rect x="120" y="195" width="240" height="1" fill="#F1F5F9" />
-      <rect x="120" y="215" width="100" height="12" rx="6" fill="#0EA5E9" fillOpacity="0.2" />
-      <rect x="280" y="210" width="80" height="24" rx="4" fill="#0EA5E9" />
-      <text x="320" y="226" textAnchor="middle" fontSize="10" fontWeight="bold" fill="white">FILED</text>
-      <circle cx="80" cy="80" r="25" fill="#FFFFFF" shadow="0 10px 15px -3px rgba(0, 0, 0, 0.1)" />
-      <path d="M72 80 L 78 86 L 88 74" stroke="#0EA5E9" strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" aria-label="ITR Services Illustration">
+      <rect width="480" height="320" rx="16" fill="#F3F4F6" />
+      <rect x="140" y="40" width="200" height="240" rx="12" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <rect x="160" y="70" width="160" height="12" rx="4" fill="#E5E7EB" />
+      <rect x="160" y="92" width="120" height="8" rx="4" fill="#E5E7EB" />
+      <rect x="160" y="120" width="160" height="1.5" fill="#E5E7EB" />
+      <text x="160" y="145" fontSize="10" fontWeight="bold" fill="#4B5563">Income Sources</text>
+      <rect x="160" y="155" width="100" height="8" rx="4" fill="#DBEAFE" />
+      <rect x="160" y="171" width="80" height="8" rx="4" fill="#DBEAFE" />
+      <rect x="160" y="187" width="120" height="8" rx="4" fill="#DBEAFE" />
+      <rect x="160" y="210" width="160" height="1.5" fill="#E5E7EB" />
+      <text x="160" y="232" fontSize="10" fontWeight="bold" fill="#4B5563">Deductions</text>
+      <rect x="160" y="242" width="90" height="8" rx="4" fill="#D1FAE5" />
+      <circle cx="60" cy="80" r="28" fill="#4F46E5" />
+      <text x="60" y="87" textAnchor="middle" fontSize="20" fill="white" fontWeight="bold">₹</text>
+      <circle cx="420" cy="80" r="28" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="2"/>
+      <path d="M410 80 l8 8 l14 -16" stroke="#16A34A" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      <rect x="50" y="180" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5"/>
+      <text x="85" y="196" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#4B5563">Form 16</text>
+      <text x="85" y="210" textAnchor="middle" fontSize="7" fill="#6B7280">Salary</text>
+      <rect x="360" y="180" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5"/>
+      <text x="395" y="196" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#4B5563">26AS</text>
+      <text x="395" y="210" textAnchor="middle" fontSize="7" fill="#6B7280">Tax Credit</text>
+      <rect x="50" y="240" width="70" height="40" rx="6" fill="#FFFFFF" stroke="#D1D5DB" strokeWidth="1.5"/>
+      <text x="85" y="256" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#4B5563">AIS / TIS</text>
+      <text x="85" y="270" textAnchor="middle" fontSize="7" fill="#6B7280">Review</text>
+      <rect x="360" y="240" width="70" height="40" rx="6" fill="#4F46E5" stroke="#4F46E5" strokeWidth="1.5"/>
+      <text x="395" y="256" textAnchor="middle" fontSize="8" fontWeight="bold" fill="white">ITR Filed</text>
+      <path d="M388 265 l5 5 l9 -9" stroke="white" strokeWidth="2" fill="none" strokeLinecap="round"/>
     </svg>
   );
 }
@@ -32,164 +42,101 @@ function ItrIllustration() {
 const ITR = () => {
   const { t } = useLanguage();
   const data = t.serviceDetail?.itr || translations.en.serviceDetail.itr;
+  const common = t.common || translations.en.common;
+  const services = t.services?.items || translations.en.services.items;
 
   return (
     <>
       <SEO
-        title={`${data.title} | Byalance`}
-        description={data.desc}
-        keywords="itr filing, income tax return, itr services, tax filing, e-filing, income tax consultant"
+        title="ITR Services | Byalance"
+        description="Expert ITR filing services for individuals and businesses. Accurate, on-time income tax return filing."
+        keywords="ITR filing, income tax return, ITR services, tax filing India, Form 16, AIS, TIS"
       />
       <div className="min-h-screen bg-gray-50 pt-20">
-
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-blue-50 to-white py-16">
+        <section className="bg-gradient-to-br from-indigo-50 to-white py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-blue-600 rounded-xl text-white shadow-lg shadow-blue-100">
-                      <FileText className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-blue-600 uppercase tracking-wide">{t.services.title}</p>
-                      <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{data.title}</h1>
-                    </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-indigo-600 rounded-xl text-white">
+                    <FileText className="w-8 h-8" />
                   </div>
-                  <p className="text-xl text-gray-600 max-w-3xl mt-4 leading-relaxed">
-                    {data.desc}
-                  </p>
-                </motion.div>
+                  <div>
+                    <p className="text-sm font-medium text-indigo-600 uppercase tracking-wide">{t.nav?.services || 'Services'}</p>
+                    <h1 className="text-3xl md:text-4xl font-bold text-gray-900">{data.title}</h1>
+                  </div>
+                </div>
+                <p className="text-xl text-gray-600 max-w-3xl mt-4">{data.desc}</p>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="hidden md:block"
-              >
-                <ItrIllustration />
-              </motion.div>
+              <div className="hidden md:block"><ItrIllustration /></div>
             </div>
           </div>
         </section>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 lg:grid-cols-3 gap-10">
-
-          {/* Main content */}
           <div className="lg:col-span-2 space-y-8">
-
-            {/* What's Included */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">{t.common.whatsIncluded}</h2>
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">{common.whatsIncluded}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                 {data.features.map((f: string) => (
                   <div key={f} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-blue-600" />
-                    </div>
+                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{f}</span>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            {/* Why It Matters */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whyTitle}</h2>
-              <div className="text-gray-600 whitespace-pre-line leading-relaxed">
-                {data.whyDesc}
-              </div>
-            </motion.div>
+              {data.whyDesc.split('\n\n').map((para: string, i: number) => (
+                <p key={i} className="text-gray-600 mb-4 last:mb-0">{para}</p>
+              ))}
+            </div>
 
-            {/* Who Is This For */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="bg-white rounded-2xl border border-slate-100 p-8 shadow-sm"
-            >
+            <div className="bg-white rounded-2xl border border-slate-100 p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{data.whoTitle}</h2>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {data.whoItems.map((w: string) => (
                   <li key={w} className="flex items-center gap-3 text-gray-700">
-                    <div className="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
-                      <ArrowRight className="w-3 h-3 text-blue-600" />
-                    </div>
-                    {w}
+                    <ArrowRight className="w-4 h-4 text-indigo-600 flex-shrink-0" />{w}
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           </div>
 
-          {/* Sidebar */}
           <div className="space-y-6">
+            <div className="bg-white rounded-2xl border-2 border-indigo-600 p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{common.getStartedToday}</h3>
+              <p className="text-gray-600 text-sm mb-4">{data.ctaDesc}</p>
+              <a href="https://wa.me/917406296116" target="_blank" rel="noopener noreferrer"
+                className="block w-full text-center bg-green-500 text-white px-4 py-3 rounded-lg font-medium hover:bg-green-600 transition-colors mb-3">
+                {common.chatWhatsapp}
+              </a>
+              <Link to="/#contact"
+                className="block w-full text-center border border-indigo-600 text-indigo-600 px-4 py-3 rounded-lg font-medium hover:bg-indigo-50 transition-colors">
+                {common.sendEnquiry}
+              </Link>
+            </div>
 
-            {/* CTA Card */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="bg-white rounded-2xl border-2 border-blue-600 p-6 sticky top-24 shadow-xl shadow-blue-100/50"
-            >
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{t.common.getStartedToday}</h3>
-              <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                {data.ctaDesc || "Filing your income tax return on time and accurately is easy with Byalance."}
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="https://wa.me/917406296116"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full bg-green-500 text-white px-4 py-4 rounded-xl font-bold hover:bg-green-600 transition-all shadow-lg shadow-green-100"
-                >
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 brightness-0 invert" />
-                  {t.common.chatWhatsapp}
-                </a>
-                <Link
-                  to="/#contact"
-                  className="block w-full text-center border border-slate-200 text-slate-900 px-4 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all"
-                >
-                  {t.common.sendEnquiry}
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Related Services */}
-            <div className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">{t.common.relatedServices}</h3>
-              <ul className="space-y-3">
+            <div className="bg-white rounded-2xl border border-slate-100 p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{common.relatedServices}</h3>
+              <ul className="space-y-2">
                 {[
-                  { label: t.serviceDetail?.accounting?.title || "Accounting & Bookkeeping", to: "/services/accounting-bookkeeping" },
-                  { label: t.serviceDetail?.gst?.title || "GST Services",       to: "/services/gst-services"       },
-                  { label: t.serviceDetail?.tds?.title || "TDS Services",       to: "/services/tds-services"       },
-                  { label: t.serviceDetail?.payroll?.title || "Payroll Processing", to: "/services/payroll-processing" },
+                  { label: services[0]?.title, to: "/services/accounting-bookkeeping" },
+                  { label: services[2]?.title, to: "/services/gst-services" },
+                  { label: services[3]?.title, to: "/services/tds-services" },
+                  { label: services[4]?.title, to: "/services/payroll-processing" },
                 ].map(({ label, to }) => (
                   <li key={to}>
-                    <Link to={to} className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center gap-2 group">
-                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
-                      {label}
+                    <Link to={to} className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center gap-1">
+                      <ArrowRight className="w-3 h-3" />{label}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-
           </div>
         </div>
       </div>
