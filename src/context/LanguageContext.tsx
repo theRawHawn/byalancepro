@@ -224,7 +224,7 @@ export const translations = {
     contact: {
       badge: 'Expert Consultation',
       title: 'Ready to fortify your financial compliance?',
-      description: 'Speak with our Professional accountants today. We provide clear paths to regulatory clarity and business growth.',
+      description: 'Speak with our senior accountants today. We provide clear paths to regulatory clarity and business growth.',
       phone: 'Call Us',
       email: 'Email Us',
       location: 'Visit Us',
@@ -247,7 +247,7 @@ export const translations = {
       learnMore: 'Learn More',
       businessHours: 'Business Hours',
       instantResponse: 'Instant Response',
-      whatsappDesk: 'Our WhatsApp desk is manned by experienced accountants for rapid policy guidance.',
+      whatsappDesk: 'Our WhatsApp desk is manned by certified accountants for rapid policy guidance.',
       messageNow: 'Message Now',
       enterName: 'Enter your name',
       mobileNumber: 'Mobile Number',
@@ -420,8 +420,8 @@ export const translations = {
       contact: 'संपर्क',
     },
     hero: {
-      subtitle: 'लेखांकन को सरल करना, विकास को शक्ति देना।',
-      description: 'Byalance बुककीपिंग, टैक्स अनुपालन और वित्तीय रणनीति के लिए आपका ऑल-इन-वन पार्टनर है।',
+      subtitle: 'लेखांकन को सरल बनाना, विकास को शक्ति देना।',
+      description: 'हम आपके GST, TDS, Payroll और Full Accounting संभालते हैं — ताकि आप अपने व्यवसाय पर ध्यान केंद्रित कर सकें।',
       bookConsultation: 'नि:शुल्क परामर्श बुक करें',
       whatsappNow: 'व्हाट्सएप करें',
     },
@@ -752,7 +752,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'ಲೆಕ್ಕಪತ್ರ ನಿರ್ವಹಣೆಯನ್ನು ಸರಳಗೊಳಿಸುವುದು, ಬೆಳವಣಿಗೆಗೆ ಶಕ್ತಿ ನೀಡುವುದು.',
-      description: 'Byalance ಬುಕ್‌ಕೀಪಿಂಗ್, ತೆರಿಗೆ అనుసరణ మరియు ఆర్థిక వ్యూహం కోసం మీ ఏకైక పాలుదారు.',
+      description: 'ನಾವು ನಿಮ್ಮ GST, TDS, Payroll ಮತ್ತು ಸಂಪೂರ್ಣ Accounting ಅನ್ನು ನಿರ್ವಹಿಸುತ್ತೇವೆ — ಆದ್ದರಿಂದ ನೀವು ನಿಮ್ಮ ವ್ಯವಹಾರದ ಮೇಲೆ ಗಮನ ಹರಿಸಬಹುದು.',
       bookConsultation: 'ಉಚಿತ ಸಮಾಲೋಚನೆ ಪಡೆಯಿರಿ',
       whatsappNow: 'ಈಗಲೇ ವಾಟ್ಸಾಪ್ ಮಾಡಿ',
     },
@@ -825,7 +825,7 @@ export const translations = {
           features: [
             'ಟ್ಯಾನ್ (TAN) ಅರ್ಜಿ',
             'ಫಾರ್ಮ್ 24Q, 26Q ಫೈಲಿಂಗ್',
-            'ಮುಂಗಡ ತೆರಿಗೆ ochu ಚಲನ್ ನಿರ್ವಹಣೆ',
+            'ಮುಂಗಡ ತೆರಿಗೆ ಮತ್ತು ಚಲನ್ ನಿರ್ವಹಣೆ',
             'ಫಾರ್ಮ್ 16/16A ರಚನೆ',
             'ಟಿಡಿಎಸ್ ಡಿಫಾಲ್ಟ್ ಡಿಮ್ಯಾಂಡ್ ಪರಿಹಾರ'
           ]
@@ -863,7 +863,7 @@ export const translations = {
       starter: 'ಸ್ಟಾರ್ಟರ್ ಪ್ಲಾನ್',
       starterPrice: '₹1,999 – ₹6,999',
       perMonth: '/ತಿಂಗಳು',
-      starterFeatures: ['ಜಿಎಸ್‌ಟಿ ರಿಟರ್ನ್ಸ್‌', 'ಬೇಸಿಕ್ ಬುಕ್ಕೀಪಿಂಗ್', 'ಸೇಲ್ಸ್ ಮತ್ತು ಪರ್ಚೇಸ್ ಎಂಟ್ರಿಗಳು', 'ಮಾಸಿಕ ಹಣಕಾಸು ವರದಿಗಳು'],
+      starterFeatures: ['ஜிஎஸ்டி கணக்குகள்', 'அடிப்படை கணக்குப்பதிவு', 'விற்பனை மற்றும் கொள்முதல் பதிவுகள்', 'மாதாந்திர நிதி அறிக்கைகள்'],
       recommended: 'ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ',
       growth: 'ಗ್ರೋತ್ ಪ್ಲಾನ್',
       growthPrice: '₹7,499 – ₹14,999',
@@ -1092,7 +1092,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'అకౌంటింగ్‌ను సరళీకృతం చేయడం, వృద్ధిని పెంచడం.',
-      description: 'బుక్ కీపింగ్, టాక్స్ కంప్లైయన్స్ మరియు ఆర్థిక వ్యూహం కోసం Byalance మీ ఆల్-ఇన్-వన్ భాగస్వామి.',
+      description: 'మేము మీ GST, TDS, Payroll మరియు Full Accounting ను నిర్వహిస్తాము — తద్వారా మీరు మీ వ్యాపారంపై దృష్టి పెట్టవచ్చు.',
       bookConsultation: 'ఉచిత సంప్రదింపు బుక్ చేయండి',
       whatsappNow: 'వాట్సాప్ చేయండి',
     },
@@ -1430,7 +1430,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'लेखांकन सुलभ करणे, विकासाला चालना देणे.',
-      description: 'Byalance बुककीपिंग, टॅक्स कंप्लायन्स आणि आर्थिक धोरणासाठी तुमचा ऑल-इन-वन भागीदार आहे.',
+      description: 'आम्ही तुमचे GST, TDS, Payroll आणि Full Accounting हाताळतो — जेणेकरून तुम्ही तुमच्या व्यवसायावर लक्ष केंद्रित करू शकाल.',
       bookConsultation: 'मोफत सल्ला घ्या',
       whatsappNow: 'व्हॉट्सॲप करा',
     },
@@ -1769,7 +1769,7 @@ export const translations = {
     },
     hero: {
       subtitle: 'கணக்கியலை எளிதாக்குவது, வளர்ச்சியைத் தூண்டுவது.',
-      description: 'Byalance என்பது கணக்குப்பதிவு, வரி இணக்கம் மற்றும் நிதி உத்திக்கான உங்களது ஒரே கூட்டாளர்.',
+      description: 'நாங்கள் உங்கள் GST, TDS, Payroll மற்றும் Full Accounting ஆகியவற்றைக் கையாளுகிறோம் — எனவே நீங்கள் உங்கள் வணிகத்தில் கவனம் செலுத்தலாம்.',
       bookConsultation: 'இலவச ஆலோசனை பெறவும்',
       whatsappNow: 'வாட்ஸ்அப் செய்யவும்',
     },
