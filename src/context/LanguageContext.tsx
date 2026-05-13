@@ -196,7 +196,7 @@ export const translations = {
       starter: 'Starter Plan',
       starterPrice: '₹1,999 – ₹6,999',
       perMonth: '/month',
-      starterFeatures: ['GST Returns', 'Basic Bookkeeping', 'Sales & Purchase Entries', 'Monthly Financial Reports'],
+      starterFeatures: ['GSTR-1 & GSTR-3B Filing', 'Bookkeeping', 'Sales & Purchase Entries', 'Monthly GST Summary & Liability Report'],
       recommended: 'Recommended',
       growth: 'Growth Plan',
       growthPrice: '₹7,499 – ₹14,999',
