@@ -20,30 +20,12 @@ import GST from './components/services/GST';
 import ITR from './components/services/ITR';
 import Payroll from './components/services/Payroll';
 import TDS from './components/services/TDS';
-import { LanguageProvider, useLanguage, translations } from './context/LanguageContext';
+import { LanguageProvider } from './context/LanguageContext';
 import SEO from './components/SEO';
 import ScarcityPopup from './components/ScarcityPopup';
+import PrivacyPolicyPage from './pages/PrivacyPolicy';
+import DataHandlingPage from './pages/DataHandling';
 
-// A generic service page component for demonstration
-const ServicePage = ({ title, titleKey }: { title: string, titleKey?: string }) => {
-  const { t } = useLanguage();
-  // Service page might not be translated for all languages yet, so fallback to English if needed
-  const serviceT = t.servicePage || translations.en.servicePage;
-  
-  // Use translated title if titleKey is provided, otherwise fallback to title
-  const displayTitle = titleKey ? t.footer[titleKey] : title;
-
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      exit={{ opacity: 0 }}
-      className="pt-40 pb-24 min-h-screen bg-white"
-    >
-      {/* ... (rest of the component) ... */}
-    </motion.div>
-  );
-};
 
 const LandingPage = () => (
   <>
@@ -84,8 +66,8 @@ export default function App() {
             <Route path="/services/itr-services" element={<ITR />} />
             <Route path="/services/payroll-processing" element={<Payroll />} />
             <Route path="/services/tds-services" element={<TDS />} />
-            <Route path="/privacy-policy" element={<ServicePage title="Privacy Policy" titleKey="privacy" />} />
-            <Route path="/data-handling" element={<ServicePage title="Data Handling Policy" titleKey="data" />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/data-handling" element={<DataHandlingPage />} />
             {/* Fallback for other routes */}
             <Route path="*" element={<LandingPage />} />
           </Routes>
